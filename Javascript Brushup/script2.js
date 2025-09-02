@@ -68,11 +68,3 @@ function findMax(arr) {
     return max
 }
 console.log(findMax(arr)) */
-
-const arr = [3,5,7,9,11]
-const output = arr.reduce(function(accumulator,current){
-    if(currentfmliacc){
-        acc=(acc=)ar{
-            r
-    }
-},0)
