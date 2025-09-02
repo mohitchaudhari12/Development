@@ -1,2 +1,3 @@
 # Development
-This is my first repository.
+
+This is my first repository or directory.
