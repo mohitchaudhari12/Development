@@ -38,7 +38,6 @@ createOrder(cart)
 })
 .then((paymentInfo) => updateWalleteBalance(paymentInfo)) */
 
-
 /* 
 //Promise using arrow function
 const cart = ["shirt","pant","shoes","kurta"]
@@ -68,8 +67,7 @@ createOrder(cart)
 .then((paymentInfo) => showOrderSummary(paymentInfo))
 .then((paymentInfo) => updateWalletBalance(paymentInfo)) */
 
-
-const cart = ["shoes","pant","kurta"]
+/* const cart = ["shoes","pant","kurta"]
 
 const promise = createOrder(cart); //orderaId
 
@@ -78,7 +76,7 @@ promise.then(function(orderId){
     //proceedToPayment(orderId)
 });
 
-///producer
+//producer
 function createOrder(cart){
     const pr = new Promise(function (resolve,reject){
         //create order
@@ -100,4 +98,35 @@ function createOrder(cart){
         }
     });
     return pr;
+}
+ */
+
+//creating costom promise
+const cart = ["pant", "kurta", "shoes"];
+
+const promise = createOrder(cart);
+console.log(promise);
+
+promise.then(function (orderId) {
+  console.log(orderId);
+});
+function createOrder(cart) {
+  const pr = new Promise(function (resolve, reject) {
+    if (!validateCart(cart)) {
+      const err = new Error("Cart is not valid!");
+      reject(err);
+    }
+
+    const orderId = "12345";
+    if (orderId) {
+      setTimeout(function () {
+        resolve(orderId);
+      }, 5000);
+    }
+  });
+  return pr;
+}
+
+function validateCart(cart) {
+  return false;
 }
