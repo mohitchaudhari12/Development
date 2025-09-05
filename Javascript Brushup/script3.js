@@ -134,7 +134,7 @@ function validateCart(cart) {
   return false;
 } */
 
-//promise chanining
+/* //promise chanining
 const cart = ["pant", "kurta", "shoes"];
 
 createOrder(cart)
@@ -183,4 +183,45 @@ function proceedToPayment(orderId) {
 
 function validateCart(cart) {
   return false;
+} */
+
+const cart = ["Pant", "Shirt", "Shoes"];
+createOrder(cart)
+  .then(function (orderId) {
+    console.log(orderId);
+    return orderId;
+  })
+  .catch(function (err) {
+    console.log(err.message);
+  })
+  .then(function(orderId){
+    return proceedToPayment(orderId)
+  })
+
+function validatecart(cart){
+  return false
 }
+
+function createOrder(cart){
+  const pr = new Promise(function(resolve,reject){
+    if(!validatecart(cart)){
+      const err = new Error("Cart is not Valid!!!")
+      reject(err)
+    }
+    const orderId = "1234"
+    if(orderId){
+      setTimeout(function(){
+        resolve(orderId)
+      },5000)
+    } 
+  })
+  return pr
+}
+
+function proceedToPayment(orderId){
+  return new Promise(function(resolve,reject){
+    resolve("Payment Successful")
+  })
+} 
+
+  
