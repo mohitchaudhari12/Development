@@ -49,7 +49,9 @@ async function handlePromise() {
 }
 handlePromise(); */
 
-const API_URL = "https://otunibahinaurlinvalid";
+
+//handling error inside async await 
+/* const API_URL = "https://otunibahinaurlinvalid";
 async function handlePromise() {
   try {
     const data = await fetch(API_URL);
@@ -60,3 +62,4 @@ async function handlePromise() {
   }
 }
 handlePromise();
+ */
